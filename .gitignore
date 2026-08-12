@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment variables (contains secrets)
+.env
+.env.local
+.env.production
+
+# Build output
+dist/
+build/
+
+# Prisma
+prisma/dev.db
+prisma/dev.db-journal
+prisma/*.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
