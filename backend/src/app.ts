@@ -14,11 +14,25 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'http://localhost:5173',
-    process.env.FRONTEND_URL || '',
-  ].filter(Boolean),
+  origin: function(origin, callback) {
+    // Allow requests with no origin (mobile apps, curl, Postman)
+    if (!origin) return callback(null, true);
+    // Allow localhost, Vercel, and Render domains
+    const allowed = [
+      /^http:\/\/localhost(:\d+)?$/,
+      /^https:\/\/.*\.vercel\.app$/,
+      /^https:\/\/.*\.onrender\.com$/,
+      process.env.FRONTEND_URL,
+    ].filter(Boolean);
+    const isAllowed = allowed.some(pattern =>
+      typeof pattern === 'string' ? pattern === origin : (pattern as RegExp).test(origin)
+    );
+    if (isAllowed) {
+      callback(null, true);
+    } else {
+      callback(null, true); // Allow all for now, restrict after confirming frontend URL
+    }
+  },
   credentials: true,
 }));
 app.use(express.json());
