@@ -8,11 +8,19 @@
 
 | Service | URL |
 | :--- | :--- |
-| 🌐 **Frontend** | [https://nexus-erp-eta.vercel.app](https://nexus-erp-eta.vercel.app) |
-| ⚙️ **Backend API** | [https://nexuserp-779t.onrender.com](https://nexuserp-779t.onrender.com) |
+| 🌐 **Frontend (Vercel)** | [https://nexus-erp-eta.vercel.app](https://nexus-erp-eta.vercel.app) |
+| ⚙️ **Backend API (Render)** | [https://nexuserp-779t.onrender.com](https://nexuserp-779t.onrender.com) |
 | 🩺 **Health Check** | [https://nexuserp-779t.onrender.com/api/health](https://nexuserp-779t.onrender.com/api/health) |
 
 > **Note:** Backend runs on Render's free tier — first request may take ~50 seconds to wake up.
+
+## 💻 Local URLs
+
+| Service | URL |
+| :--- | :--- |
+| 🌐 **Frontend** | [http://localhost:3000](http://localhost:3000) |
+| ⚙️ **Backend API** | [http://localhost:5000](http://localhost:5000) |
+| 🩺 **Health Check** | [http://localhost:5000/api/health](http://localhost:5000/api/health) |
 
 ---
 
